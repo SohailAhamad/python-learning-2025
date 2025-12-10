@@ -183,42 +183,231 @@ Traceback (most recent call last):
   File "<pyshell#72>", line 1, in <module>
     list(123)
 TypeError: 'int' object is not iterable
->>> list('123')
+list('123')
 ['1', '2', '3']
->>> fruits = check
+fruits = check
 Traceback (most recent call last):
   File "<pyshell#74>", line 1, in <module>
     fruits = check
 NameError: name 'check' is not defined
->>> fruits = ['apple','banana','peach']
->>> fruits=check
+fruits = ['apple','banana','peach']
+fruits=check
 Traceback (most recent call last):
   File "<pyshell#76>", line 1, in <module>
     fruits=check
 NameError: name 'check' is not defined
->>> fruits
+fruits
 ['apple', 'banana', 'peach']
->>> check = fruits
->>> check
+check = fruits
+check
 ['apple', 'banana', 'peach']
->>> check[1] = ['mango']
->>> fruits
+check[1] = ['mango']
+fruits
 ['apple', ['mango'], 'peach']
->>> check.append('Guava')
->>> fruits
+check.append('Guava')
+fruits
 ['apple', ['mango'], 'peach', 'Guava']
->>> check[3]
+check[3]
 'Guava'
->>> check
+check
 ['apple', ['mango'], 'peach', 'Guava']
->>> del check[1]
->>> check
+del check[1]
+check
 ['apple', 'peach', 'Guava']
->>> checl.sort()
+checl.sort()
 Traceback (most recent call last):
   File "<pyshell#88>", line 1, in <module>
     checl.sort()
 NameError: name 'checl' is not defined. Did you mean: 'check'?
->>> check.sort()
->>> check
+check.sort()
+check
 ['Guava', 'apple', 'peach']
+
+================== RESTART: D:/Power BI/Python/test.py =================
+Emails: ['sohail@email.com', 'backup@work.com']
+Phones: ['987-654-3210']
+myCat = { 'size' : 'fat' , 'color' : 'gray', 'dispotion' : 'loud' }
+myCat['dispotion']
+'loud'
+'color' in myCat
+True
+list(myCat.key())
+Traceback (most recent call last):
+  File "<pyshell#94>", line 1, in <module>
+    list(myCat.key())
+AttributeError: 'dict' object has no attribute 'key'. Did you mean: 'keys'?
+list(myCat.keys())
+['size', 'color', 'dispotion']
+list(myCat.values())
+['fat', 'gray', 'loud']
+list(myCat.items())
+[('size', 'fat'), ('color', 'gray'), ('dispotion', 'loud')]
+for k in myCat.keys():
+    print(k)
+
+size
+color
+dispotion
+for k in myCat.values():
+    print(k)
+
+    
+fat
+gray
+loud
+for k,v in myCat.items():
+    print(k,v)
+
+    
+size fat
+color gray
+dispotion loud
+'color' in myCat.keys()
+True
+myCat.get('color',0)
+'gray'
+myCat.get('null',0)
+0
+myCat.setdefault('name','leo')
+'leo'
+myCat
+{'size': 'fat', 'color': 'gray', 'dispotion': 'loud', 'name': 'leo'}
+
+============= RESTART: D:/Power BI/Python/charactercount.py ============
+Traceback (most recent call last):
+  File "D:/Power BI/Python/charactercount.py", line 6, in <module>
+    count[character] = cpunt[character] + 1
+NameError: name 'cpunt' is not defined. Did you mean: 'count'?
+
+============= RESTART: D:/Power BI/Python/charactercount.py ============
+{' ': 14, 'I': 1, 't': 6, 'w': 2, 'a': 4, 's': 3, 'b': 1, 'r': 5, 'i': 6, 'g': 2, 'h': 3, 'c': 3, 'o': 2, 'l': 3, 'd': 3, 'y': 1, 'n': 4, 'A': 1, 'p': 1, ',': 1, 'e': 5, 'k': 2, '.': 1}
+
+============= RESTART: D:/Power BI/Python/charactercount.py ============
+{' ': 14, 'I': 7, 'T': 6, 'W': 2, 'A': 5, 'S': 3, 'B': 1, 'R': 5, 'G': 2, 'H': 3, 'C': 3, 'O': 2, 'L': 3, 'D': 3, 'Y': 1, 'N': 4, 'P': 1, ',': 1, 'E': 5, 'K': 2, '.': 1}
+
+============= RESTART: D:/Power BI/Python/charactercount.py ============
+{'I': 7, 'T': 6, ' ': 13, 'W': 2, 'A': 5, 'S': 3, 'B': 1, 'R': 5, 'G': 2, 'H': 3, 'C': 3, 'O': 2, 'L': 3, 'D': 3, 'Y': 1, 'N': 4, 'P': 1, ',': 1, 'E': 5, 'K': 2, '.': 1}
+
+============= RESTART: D:/Power BI/Python/charactercount.py ============
+{' ': 13,
+ ',': 1,
+ '.': 1,
+ 'A': 5,
+ 'B': 1,
+ 'C': 3,
+ 'D': 3,
+ 'E': 5,
+ 'G': 2,
+ 'H': 3,
+ 'I': 7,
+ 'K': 2,
+ 'L': 3,
+ 'N': 4,
+ 'O': 2,
+ 'P': 1,
+ 'R': 5,
+ 'S': 3,
+ 'T': 6,
+ 'W': 2,
+ 'Y': 1}
+theBoard = { 'top-L': ' ','top-M': ' ','top-R': ' ','mid-L': ' ','mid-M': ' ','mid-R': ' ','mid-L': ' ','mid-M': ' ','mid-R': ' ' }
+theBoard
+{'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' '}
+import pprint
+pprint.pprint(theBoard)
+{'mid-L': ' ',
+ 'mid-M': ' ',
+ 'mid-R': ' ',
+ 'top-L': ' ',
+ 'top-M': ' ',
+ 'top-R': ' '}
+theBoard.append('low-L': ' ', 'low-M': ' ', 'low-R': ' ')
+SyntaxError: invalid syntax
+theBoard.setdefault('low-L': ' ', 'low-M': ' ', 'low-R': ' ')
+SyntaxError: invalid syntax
+theBoard.setdefault('low-L', ' ', 'low-M',' ', 'low-R', ' ')
+Traceback (most recent call last):
+  File "<pyshell#117>", line 1, in <module>
+    theBoard.setdefault('low-L', ' ', 'low-M',' ', 'low-R', ' ')
+TypeError: setdefault expected at most 2 arguments, got 6
+theBoard.setdefault('low-L', ' ')
+' '
+theBoard
+{'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' '}
+theBoard.setdefault('low-M', ' ')
+' '
+theBoard.setdefault('low-L', ' ')
+' '
+import pprint
+pprint.pprint(theBoard)
+{'low-L': ' ',
+ 'low-M': ' ',
+ 'mid-L': ' ',
+ 'mid-M': ' ',
+ 'mid-R': ' ',
+ 'top-L': ' ',
+ 'top-M': ' ',
+ 'top-R': ' '}
+theBoard.setdefault('low-T', ' ')
+' '
+theBoard['mid-M'] = 'X'
+pprint.pprint(theBoard)
+{'low-L': ' ',
+ 'low-M': ' ',
+ 'low-T': ' ',
+ 'mid-L': ' ',
+ 'mid-M': 'X',
+ 'mid-R': ' ',
+ 'top-L': ' ',
+ 'top-M': ' ',
+ 'top-R': ' '}
+def printBoard(board):
+    print(board[top-L] + '|' + board[top-M] + '|' + board[top-R] + '|')
+    print('-----')
+    print(board[mid-L] + '|' + board[mid-M] + '|' + board[mid-R] + '|')
+    print('-----')
+    print
+KeyboardInterrupt
+
+=============== RESTART: D:/Power BI/Python/tictactoe.py ===============
+{'low-L': ' ',
+ 'low-M': ' ',
+ 'low-R': ' ',
+ 'mid-L': ' ',
+ 'mid-M': ' ',
+ 'mid-R': ' ',
+ 'top-L': ' ',
+ 'top-M': ' ',
+ 'top-R': ' '}
+>>> def printBoard(board):
+...     print(board[top-L] + '|' + board[top-M] + '|' + board[top-R] + '|')
+...     print('-----')
+...     print(board[mid-L] + '|' + board[mid-M] + '|' + board[mid-R] + '|')
+...     print('-----')
+...     print(board[low-L] + '|' + board[low-M] + '|' + board[low-R] + '|')
+... 
+...     
+>>> 
+>>> print(theBoard)
+{'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+>>> printBoard(theBoard)
+Traceback (most recent call last):
+  File "<pyshell#136>", line 1, in <module>
+    printBoard(theBoard)
+  File "<pyshell#133>", line 2, in printBoard
+    print(board[top-L] + '|' + board[top-M] + '|' + board[top-R] + '|')
+NameError: name 'top' is not defined
+>>> def printBoard(board):
+...     print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'] + '|')
+...     print('-----')
+...     print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'] + '|')
+...     print('-----')
+...     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'] + '|')
+... 
+...     
+>>> printBoard(theBoard)
+ | | |
+-----
+ | | |
+-----
+ | | |
