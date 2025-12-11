@@ -379,35 +379,121 @@ KeyboardInterrupt
  'top-L': ' ',
  'top-M': ' ',
  'top-R': ' '}
->>> def printBoard(board):
-...     print(board[top-L] + '|' + board[top-M] + '|' + board[top-R] + '|')
-...     print('-----')
-...     print(board[mid-L] + '|' + board[mid-M] + '|' + board[mid-R] + '|')
-...     print('-----')
-...     print(board[low-L] + '|' + board[low-M] + '|' + board[low-R] + '|')
-... 
-...     
->>> 
->>> print(theBoard)
+def printBoard(board):
+    print(board[top-L] + '|' + board[top-M] + '|' + board[top-R] + '|')
+    print('-----')
+    print(board[mid-L] + '|' + board[mid-M] + '|' + board[mid-R] + '|')
+    print('-----')
+    print(board[low-L] + '|' + board[low-M] + '|' + board[low-R] + '|')
+
+    
+
+print(theBoard)
 {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
->>> printBoard(theBoard)
+printBoard(theBoard)
 Traceback (most recent call last):
   File "<pyshell#136>", line 1, in <module>
     printBoard(theBoard)
   File "<pyshell#133>", line 2, in printBoard
     print(board[top-L] + '|' + board[top-M] + '|' + board[top-R] + '|')
 NameError: name 'top' is not defined
->>> def printBoard(board):
-...     print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'] + '|')
-...     print('-----')
-...     print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'] + '|')
-...     print('-----')
-...     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'] + '|')
-... 
-...     
->>> printBoard(theBoard)
+def printBoard(board):
+    print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'] + '|')
+    print('-----')
+    print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'] + '|')
+    print('-----')
+    print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'] + '|')
+
+    
+printBoard(theBoard)
  | | |
 -----
  | | |
 -----
  | | |
+spam = 'Hello World'
+spam.upper()
+'HELLO WORLD'
+spam.islower()
+False
+spam = spam.lower()
+spam
+'hello world'
+spam.isupper()
+False
+'hello'.isalpha()
+True
+'hello123'.isalpha()
+False
+'hello123'.isnum()
+Traceback (most recent call last):
+  File "<pyshell#148>", line 1, in <module>
+    'hello123'.isnum()
+AttributeError: 'str' object has no attribute 'isnum'. Did you mean: 'isalnum'?
+'hello123'.isalnum()
+True
+'123'.isdecimal()
+True
+'hello123'.isdecimal()
+False
+'    '.isspace()
+True
+'Hello World!'.isspace()
+False
+'Hello World!'[5].isspace()
+True
+'This Is Title Case'.istitle()
+True
+'This Is title Case'.istitle()
+False
+'hello world'.title()
+'Hello World'
+'Hello World!'.startswith('H')
+True
+'Hello World!'.startswith('ell')
+False
+'Hello World!'.endwith('!')
+Traceback (most recent call last):
+  File "<pyshell#160>", line 1, in <module>
+    'Hello World!'.endwith('!')
+AttributeError: 'str' object has no attribute 'endwith'. Did you mean: 'endswith'?
+'Hello World!'.endswith('!')
+True
+>>> ','.join(['cats','rats','bats'])
+'cats,rats,bats'
+>>> ' '.join(['cats','rats','bats'])
+'cats rats bats'
+>>> '/n/n'.join(['cats','rats','bats'])
+'cats/n/nrats/n/nbats'
+>>> print('/n/n'.join(['cats','rats','bats']))
+cats/n/nrats/n/nbats
+>>> print('\n\n'.join(['cats','rats','bats']))
+cats
+
+rats
+
+bats
+>>> 'Hello'.ljust(10)
+'Hello     '
+>>> 'Hello'.rjust(10,'*')
+'*****Hello'
+>>> 'Hello'.center(20)
+'       Hello        '
+>>> 'Hello'.center(19)
+'       Hello       '
+>>> 'Hello'.center(19,'-')
+'-------Hello-------'
+>>> spam = 'Hello'.ljust(10)
+>>> spam.strip()
+'Hello'
+>>> 'SpamSpamEggsbaconhamSpamSpam'.strip('Spam')
+'Eggsbaconh'
+>>> spam.replace('E','A')
+'Hello     '
+>>> import pyperclip
+>>> name = 'Sohail'
+>>> place = 'Manikonda'
+>>> time = '6 pm'
+>>> food = 'Biryani'
+>>> 'Hello %s, you are invited to party at %s at %s. Please bring %s.'%(name,place,time,food)
+'Hello Sohail, you are invited to party at Manikonda at 6 pm. Please bring Biryani.'
