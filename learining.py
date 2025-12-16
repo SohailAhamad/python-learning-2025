@@ -534,39 +534,83 @@ Traceback (most recent call last):
   File "D:/Power BI/Python/regexPhoneNumber.py", line 6, in <module>
     mo = phoneNumgex.search(message)
 NameError: name 'phoneNumgex' is not defined. Did you mean: 'phoneNumRegex'?
->>> 
+
 ============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
 412-345-2345
->>> 
+
 ============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
 Traceback (most recent call last):
   File "D:/Power BI/Python/regexPhoneNumber.py", line 7, in <module>
     print(mo.group())
 AttributeError: 'list' object has no attribute 'group'
->>> 
+
 ============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
 ['412-345-2345', '432-903-0998']
->>> import re
->>> phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d)
-...                            
+import re
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d)
+                           
 SyntaxError: unterminated string literal (detected at line 1)
->>> phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
-...                            
->>> phoneNumRegex.search('My number is 415-434-3456)
-...                      
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+                           
+phoneNumRegex.search('My number is 415-434-3456)
+                     
 SyntaxError: unterminated string literal (detected at line 1)
->>> phoneNumRegex.search('My number is 415-434-3456')
-...                      
+phoneNumRegex.search('My number is 415-434-3456')
+                     
 <re.Match object; span=(13, 25), match='415-434-3456'>
->>> mo = phoneNumRegex.search('My number is 415-434-3456')
-...                      
->>> mo.group()
-...                      
+mo = phoneNumRegex.search('My number is 415-434-3456')
+                     
+mo.group()
+                     
 '415-434-3456'
->>> phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
-...                      
->>> mo = phoneNumRegex.search('My number is 415-434-3456')
-...                      
->>> mo.group(1)
-...                      
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+                     
+mo = phoneNumRegex.search('My number is 415-434-3456')
+                     
+mo.group(1)
+                     
 '415'
+batRegex = re.compile(r'Bat(man|mobile|copter)')
+                     
+mo = batRegex.search('Batmobile lost a wheel')
+                     
+mo.group()
+                     
+'Batmobile'
+>>> 
+================ RESTART: D:/Power BI/Python/regExp1.py ================
+Traceback (most recent call last):
+  File "D:/Power BI/Python/regExp1.py", line 4, in <module>
+    mo.batRegex.search('The adventures of Batman')
+NameError: name 'mo' is not defined
+>>> 
+================ RESTART: D:/Power BI/Python/regExp1.py ================
+>>> import re
+... 
+... batRegex = re.compile(r'Bat(wo)?man')
+... mo = batRegex.search('The adventures of Batman')
+... mo.group()
+SyntaxError: multiple statements found while compiling a single statement
+>>> import re
+... 
+... batRegex = re.compile(r'Bat(wo)?man')
+... mo = batRegex.search('The adventures of Batman')
+... mo.group()
+SyntaxError: multiple statements found while compiling a single statement
+>>> import re
+>>> batRegex = re.compile(r'Bat(wo)?man')
+>>> mo = batRegex.search('The adventures of Batman')
+>>> mo.group()
+'Batman'
+>>> mo = batRegex.search('The adventures of Batwoman')
+>>> mo.group()
+'Batwoman'
+>>> regex = re.compile(r'\+\*\?')
+>>> regex.search('I learned about +*? regex syntax')
+<re.Match object; span=(16, 19), match='+*?'>
+>>> digitRegex = re.compile(r'(\d){3,5}')
+>>> digitRegex.search('1234567')
+<re.Match object; span=(0, 5), match='12345'>
+>>> digitRegex = re.compile(r'(\d){3,5}?')
+>>> digitRegex.search('1234567')
+<re.Match object; span=(0, 3), match='123'>
