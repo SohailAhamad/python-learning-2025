@@ -459,41 +459,114 @@ Traceback (most recent call last):
 AttributeError: 'str' object has no attribute 'endwith'. Did you mean: 'endswith'?
 'Hello World!'.endswith('!')
 True
->>> ','.join(['cats','rats','bats'])
+','.join(['cats','rats','bats'])
 'cats,rats,bats'
->>> ' '.join(['cats','rats','bats'])
+' '.join(['cats','rats','bats'])
 'cats rats bats'
->>> '/n/n'.join(['cats','rats','bats'])
+'/n/n'.join(['cats','rats','bats'])
 'cats/n/nrats/n/nbats'
->>> print('/n/n'.join(['cats','rats','bats']))
+print('/n/n'.join(['cats','rats','bats']))
 cats/n/nrats/n/nbats
->>> print('\n\n'.join(['cats','rats','bats']))
+print('\n\n'.join(['cats','rats','bats']))
 cats
 
 rats
 
 bats
->>> 'Hello'.ljust(10)
+'Hello'.ljust(10)
 'Hello     '
->>> 'Hello'.rjust(10,'*')
+'Hello'.rjust(10,'*')
 '*****Hello'
->>> 'Hello'.center(20)
+'Hello'.center(20)
 '       Hello        '
->>> 'Hello'.center(19)
+'Hello'.center(19)
 '       Hello       '
->>> 'Hello'.center(19,'-')
+'Hello'.center(19,'-')
 '-------Hello-------'
->>> spam = 'Hello'.ljust(10)
->>> spam.strip()
+spam = 'Hello'.ljust(10)
+spam.strip()
 'Hello'
->>> 'SpamSpamEggsbaconhamSpamSpam'.strip('Spam')
+'SpamSpamEggsbaconhamSpamSpam'.strip('Spam')
 'Eggsbaconh'
->>> spam.replace('E','A')
+spam.replace('E','A')
 'Hello     '
->>> import pyperclip
->>> name = 'Sohail'
->>> place = 'Manikonda'
->>> time = '6 pm'
->>> food = 'Biryani'
->>> 'Hello %s, you are invited to party at %s at %s. Please bring %s.'%(name,place,time,food)
+import pyperclip
+name = 'Sohail'
+place = 'Manikonda'
+time = '6 pm'
+food = 'Biryani'
+'Hello %s, you are invited to party at %s at %s. Please bring %s.'%(name,place,time,food)
 'Hello Sohail, you are invited to party at Manikonda at 6 pm. Please bring Biryani.'
+
+============ RESTART: D:/Power BI/Python/PhoneNumbercheck.py ===========
+Traceback (most recent call last):
+  File "D:/Power BI/Python/PhoneNumbercheck.py", line 19, in <module>
+    print(isPhoneNumber('415-555-1234'))
+NameError: name 'isPhoneNumber' is not defined. Did you mean: 'isPhooneNumber'?
+
+============ RESTART: D:/Power BI/Python/PhoneNumbercheck.py ===========
+True
+
+============ RESTART: D:/Power BI/Python/PhoneNumbercheck.py ===========
+True
+Enter your mobile number
+123-743-0987
+Here is your number123-743-0987
+
+============ RESTART: D:/Power BI/Python/PhoneNumbercheck.py ===========
+True
+Enter your mobile number
+3309
+Check your number
+
+============ RESTART: D:/Power BI/Python/PhoneNumbercheck.py ===========
+Traceback (most recent call last):
+  File "D:/Power BI/Python/PhoneNumbercheck.py", line 24, in <module>
+    if isPhooneNumber(PhoneNumber) == True:
+NameError: name 'PhoneNumber' is not defined. Did you mean: 'isPhooneNumber'?
+
+============ RESTART: D:/Power BI/Python/PhoneNumbercheck.py ===========
+Phone Number Found : 411-422-9083
+Phone Number Found : 432-928-8727
+
+============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
+Traceback (most recent call last):
+  File "D:/Power BI/Python/regexPhoneNumber.py", line 6, in <module>
+    mo = phoneNumgex.search(message)
+NameError: name 'phoneNumgex' is not defined. Did you mean: 'phoneNumRegex'?
+>>> 
+============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
+412-345-2345
+>>> 
+============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
+Traceback (most recent call last):
+  File "D:/Power BI/Python/regexPhoneNumber.py", line 7, in <module>
+    print(mo.group())
+AttributeError: 'list' object has no attribute 'group'
+>>> 
+============ RESTART: D:/Power BI/Python/regexPhoneNumber.py ===========
+['412-345-2345', '432-903-0998']
+>>> import re
+>>> phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d)
+...                            
+SyntaxError: unterminated string literal (detected at line 1)
+>>> phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+...                            
+>>> phoneNumRegex.search('My number is 415-434-3456)
+...                      
+SyntaxError: unterminated string literal (detected at line 1)
+>>> phoneNumRegex.search('My number is 415-434-3456')
+...                      
+<re.Match object; span=(13, 25), match='415-434-3456'>
+>>> mo = phoneNumRegex.search('My number is 415-434-3456')
+...                      
+>>> mo.group()
+...                      
+'415-434-3456'
+>>> phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+...                      
+>>> mo = phoneNumRegex.search('My number is 415-434-3456')
+...                      
+>>> mo.group(1)
+...                      
+'415'
