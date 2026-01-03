@@ -577,13 +577,13 @@ mo = batRegex.search('Batmobile lost a wheel')
 mo.group()
                      
 'Batmobile'
->>> 
+
 ================ RESTART: D:/Power BI/Python/regExp1.py ================
 Traceback (most recent call last):
   File "D:/Power BI/Python/regExp1.py", line 4, in <module>
     mo.batRegex.search('The adventures of Batman')
 NameError: name 'mo' is not defined
->>> 
+
 ================ RESTART: D:/Power BI/Python/regExp1.py ================
 >>> import re
 ... 
@@ -614,3 +614,12 @@ SyntaxError: multiple statements found while compiling a single statement
 >>> digitRegex = re.compile(r'(\d){3,5}?')
 >>> digitRegex.search('1234567')
 <re.Match object; span=(0, 3), match='123'>
+>>> phoneRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+>>> 
+
+>>> digitRegex = re.compile(r'\d')
+>>> digitRegex.search('124')
+<re.Match object; span=(0, 1), match='1'>
+>>> digitRegex = re.compile(r'\d+')
+>>> digitRegex.search('124')
+<re.Match object; span=(0, 3), match='124'>
