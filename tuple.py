@@ -1,0 +1,10 @@
+a = (1,4,2.5,"OK",-2,True)
+b = (2,5,6,7,6,0)
+c= (3,6,7,6,4,)
+print(a)
+print(a[-2])
+print(a[2:5:2]) 
+print(b + c)
+print(min(b+c))
+f = [2,5,4,3,2,5]
+print(tuple(f))

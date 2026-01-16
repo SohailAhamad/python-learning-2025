@@ -1,0 +1,10 @@
+a = { 12.3, 5 ,6 ,32, 54, 21,32,5}
+print(a)
+print(len(a))
+b = set()
+print(b)
+print(type(b))
+a.add(4)
+print(a)
+a.remove(54)
+print(a)
